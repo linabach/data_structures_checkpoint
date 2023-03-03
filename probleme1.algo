@@ -1,0 +1,34 @@
+ALGORITHM sum
+VAR
+    sum:INTEGER:=0
+    tab1: ARRAY_OF INTEGER[n];
+    tab2: ARRAY_OF INTEGER[n];
+    i:INTEGER:=0
+    j:INTEGER:=0
+    test:BOOLEAN
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        test=false
+        j=0
+        while (test==false and j<n) do
+            if (tab1(i)==tab2(j)) THEN
+                test=true
+            ELSE
+                j=j+1
+            END_IF
+        if test==false THEN
+            sum=sum+tab1[i]
+    END_FOR
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        test=false
+        j=0
+        while (test==false and j<n) do
+            if (tab2(i)==tab1(j)) THEN
+                test=true
+            ELSE
+                j=j+1
+            END_IF
+        if test==false THEN
+            sum=sum+tab2[i]
+    END_FOR
+END

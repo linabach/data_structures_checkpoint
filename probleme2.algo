@@ -1,0 +1,63 @@
+//-------------------------------------------------- procedure -------------------------------------------//
+ALGORITHM Dot product
+VAR
+    dot_product:procedure
+    v1,v2:ARRAY_OF INTEGER[2]
+    n:INTEGER:=0
+    i:INTEGER:=0
+    
+BEGIN
+    PROCEDURE dot_producte(v1,v2)
+    VAR
+        scalar:INTEGER:=0
+    BEGIN
+        scalar=v1[0]*v2[0]+v1[1]*v2[1]
+        IF (scalar==0) THEN
+            Write("the two vectors are orthogonal")
+        ELSE
+             Write("the two vectors are not orthogonal")
+        END_IF
+    END
+    Read(n)
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Read(v1[0])
+        Read(v1[1])
+        Read(v2(0))
+        Read(v2[1])
+        dot_producte(v1,v2)
+    END_FOR
+END
+
+//----------------------------------------  function  -------------------------------------------------------------//
+
+ALGORITHM Dot product
+VAR
+    dot_product:function
+    v1,v2:ARRAY_OF INTEGER[2]
+    n:INTEGER:=0
+    i:INTEGER:=0
+    res:STRING:=""
+BEGIN
+    FUNCTION  dot_producte(v1,v2) : STRING
+    VAR
+        scalar:INTEGER:=0
+        result:STRING:=""
+    BEGIN
+        scalar:=v1[0]*v2[0]+v1[1]*v2[1]
+        IF (scalar==0) THEN
+            result:="the two vectors are orthogonal"
+        ELSE
+            result:="the two vectors are not orthogonal"
+        END_IF
+        RETURN result ;
+    END
+    Read(n)
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Read(v1[0])
+        Read(v1[1])
+        Read(v2[0])
+        Read(v2[1])
+        res=dot_producte(v1,v2)
+        print(ch)
+    END_FOR
+END
