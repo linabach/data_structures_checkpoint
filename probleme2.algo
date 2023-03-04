@@ -1,13 +1,5 @@
 //-------------------------------------------------- procedure -------------------------------------------//
-ALGORITHM Dot product
-VAR
-    dot_product:procedure
-    v1,v2:ARRAY_OF INTEGER[2]
-    n:INTEGER:=0
-    i:INTEGER:=0
-    
-BEGIN
-    PROCEDURE dot_producte(v1,v2)
+PROCEDURE dot_producte(v1,v2)
     VAR
         scalar:INTEGER:=0
     BEGIN
@@ -18,6 +10,14 @@ BEGIN
              Write("the two vectors are not orthogonal")
         END_IF
     END
+
+ALGORITHM Dot product
+VAR
+    v1,v2:ARRAY_OF INTEGER[2]
+    n:INTEGER:=0
+    i:INTEGER:=0
+    
+BEGIN
     Read(n)
     FOR i FROM 0 TO n-1 STEP 1  DO
         Read(v1[0])
@@ -29,16 +29,7 @@ BEGIN
 END
 
 //----------------------------------------  function  -------------------------------------------------------------//
-
-ALGORITHM Dot product
-VAR
-    dot_product:function
-    v1,v2:ARRAY_OF INTEGER[2]
-    n:INTEGER:=0
-    i:INTEGER:=0
-    res:STRING:=""
-BEGIN
-    FUNCTION  dot_producte(v1,v2) : STRING
+FUNCTION  dot_producte(v1,v2) : STRING
     VAR
         scalar:INTEGER:=0
         result:STRING:=""
@@ -51,6 +42,14 @@ BEGIN
         END_IF
         RETURN result ;
     END
+    
+ALGORITHM Dot product
+VAR
+    v1,v2:ARRAY_OF INTEGER[2]
+    n:INTEGER:=0
+    i:INTEGER:=0
+    res:STRING:=""
+BEGIN
     Read(n)
     FOR i FROM 0 TO n-1 STEP 1  DO
         Read(v1[0])
